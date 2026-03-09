@@ -2,23 +2,64 @@
 <html>
 
 <head>
-<title>Birthday</title>
+<title>Birthday Surprise</title>
 
 <style>
+
 body{
-background-color:black;
+background:black;
+margin:0;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-margin:0;
+font-family:Arial;
 }
 
 h1{
 color:gold;
-font-size:60px;
-font-family:Arial;
+font-size:70px;
+text-align:center;
+animation: glow 2s infinite alternate;
 }
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px gold;
+}
+to{
+text-shadow:0 0 40px yellow;
+}
+}
+
+/* balloons */
+
+.balloon{
+position:absolute;
+bottom:-150px;
+width:60px;
+height:80px;
+background:red;
+border-radius:50%;
+animation: float 8s infinite;
+}
+
+.balloon:after{
+content:'';
+position:absolute;
+width:2px;
+height:40px;
+background:white;
+left:30px;
+top:80px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
 </style>
 
 </head>
@@ -26,6 +67,12 @@ font-family:Arial;
 <body>
 
 <h1>🎉 Happy Birthday 🎉</h1>
+
+<div class="balloon" style="left:10%; background:red;"></div>
+<div class="balloon" style="left:30%; background:blue; animation-duration:6s;"></div>
+<div class="balloon" style="left:50%; background:green; animation-duration:7s;"></div>
+<div class="balloon" style="left:70%; background:purple; animation-duration:5s;"></div>
+<div class="balloon" style="left:90%; background:orange; animation-duration:8s;"></div>
 
 </body>
 
